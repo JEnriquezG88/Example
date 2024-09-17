@@ -1,0 +1,24 @@
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    grid-template-rows: 1.5fr 8fr 1fr;
+}
+header{
+    grid-column: span 2;
+}
+footer{
+    grid-column: span 2;
+}
+main{
+    position: relative;
+}
+.settings-button{
+    width: auto;
+    height: auto;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 20px;
+}

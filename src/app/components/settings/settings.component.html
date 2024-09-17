@@ -1,0 +1,22 @@
+<section class="container">
+    @if (settingsActice) {
+        <div class="settings-container">
+            <button class="{{darkVariable}}" (click)="toggleMode()">
+                @if (darkMode) {
+                    <img src="icons/LightMode.png">
+                } @else {
+                    <img src="icons/DarkMode.png">
+                }
+            </button>
+        </div>
+    }
+    <div class="button-container">
+        <button class="light" (click)="toggleSettings()">
+            <div class="lines">
+                <div *ngFor="let i of [0, 1, 2]">
+                    <hr class="light">
+                </div>
+            </div>
+        </button>
+    </div>
+</section>

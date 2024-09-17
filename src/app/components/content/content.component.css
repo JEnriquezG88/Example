@@ -1,0 +1,14 @@
+.container{
+    width: 100%;
+    height: 100%;
+    align-content: center;
+    font-size: 30px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    &.light{
+        background-color: var(--first-color-light);
+        color: var(--first-color-dark);
+    } &.dark{
+        background-color: var(--first-color-dark);
+        color: var(--fifth-color-dark);
+    }
+}
