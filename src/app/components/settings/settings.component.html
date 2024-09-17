@@ -1,15 +1,12 @@
 <section class="container">
-    @if (settingsActice) {
-        <div class="settings-container">
-            <button class="{{darkVariable}}" (click)="toggleMode()">
-                @if (darkMode) {
-                    <img src="icons/LightMode.png">
-                } @else {
-                    <img src="icons/DarkMode.png">
-                }
-            </button>
-        </div>
-    }
+    <div *ngIf="settingsActice" class="settings-container">
+        <button class="{{darkVariable}}" (click)="toggleMode()">
+            <img *ngIf="darkMode; else darkModeTemplate" src="icons/LightMode.png">
+            <ng-template #darkModeTemplate>
+                <img src="icons/DarkMode.png">
+            </ng-template>
+        </button>
+    </div>
     <div class="button-container">
         <button class="light" (click)="toggleSettings()">
             <div class="lines">

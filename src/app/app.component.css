@@ -22,3 +22,26 @@ main{
     bottom: 0;
     margin: 20px;
 }
+@media (max-width: 768px){
+    .container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 6fr 1fr;
+    }
+    header{
+        grid-column: span 1;
+    }
+    footer{
+        grid-column: span 1;
+    }
+    main{
+        position: relative;
+    }
+    .settings-button{
+        width: auto;
+        height: auto;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        margin: 20px;
+    }
+}
