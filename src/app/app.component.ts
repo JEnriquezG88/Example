@@ -34,8 +34,8 @@ export class AppComponent {
       console.log(this.screenWidth, newWidth);
       const aside = document.querySelector('aside');
       if (aside) {
-        if (newWidth < this.screenWidth - 300)
-          aside.style.width = `${newWidth}px`;
+        aside.style.maxWidth = `${this.screenWidth - 300}px`;
+        aside.style.width = `${newWidth}px`;
       }
     }
   }

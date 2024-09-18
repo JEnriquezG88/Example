@@ -50,6 +50,9 @@ main{
     header{
         grid-column: span 1;
     }
+    aside{
+        min-width: auto;
+    }
     .re-size{
         display: none;
     }
