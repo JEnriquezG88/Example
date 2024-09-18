@@ -1,9 +1,9 @@
 <section class="container">
     <div *ngIf="settingsActice" class="settings-container">
         <button class="{{darkVariable}}" (click)="toggleMode()">
-            <img *ngIf="darkMode; else darkModeTemplate" src="icons/LightMode.png">
+            <img *ngIf="darkMode; else darkModeTemplate" src="icons/DarkMode.png">
             <ng-template #darkModeTemplate>
-                <img src="icons/DarkMode.png">
+                <img src="icons/LightMode.png">
             </ng-template>
         </button>
     </div>
