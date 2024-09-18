@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ChangeThemeService {
-  private theme: Theme = Theme.Light;
+  private theme: Theme = Theme.Dark;
 
   changeTheme(){
     const elements = document.querySelectorAll(`.${this.theme === Theme.Light ? 'light' : 'dark'}`);

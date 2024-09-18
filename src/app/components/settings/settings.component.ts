@@ -13,7 +13,7 @@ export class SettingsComponent {
   constructor(private changeThemeService: ChangeThemeService) {}
 
   settingsActice: boolean = false;
-  darkMode: boolean = false;
+  darkMode: boolean = true;
   darkVariable: string = 'light';
 
   toggleSettings() {
