@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from "./components/header/header.component";
 import { SidebarComponent } from "./components/sidebar/sidebar.component";
@@ -14,5 +14,30 @@ import { SettingsComponent } from "./components/settings/settings.component";
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'planning-project';
+  resizing: boolean = false;
+  startX: number = 0;
+  startWidth: number = 0;
+
+  onMouseDown(event: MouseEvent) {
+    this.resizing = true;
+    this.startX = event.clientX;
+    this.startWidth = document.querySelector('aside')?.offsetWidth || 0;
+    event.preventDefault();
+  }
+
+  @HostListener('document:mousemove', ['$event'])
+  onMouseMove(event: MouseEvent) {
+    if (this.resizing) {
+      const newWidth = this.startWidth + (event.clientX - this.startX);
+      const aside = document.querySelector('aside');
+      if (aside) {
+        aside.style.width = `${newWidth}px`;
+      }
+    }
+  }
+
+  @HostListener('document:mouseup')
+  onMouseUp() {
+    this.resizing = false;
+  }
 }

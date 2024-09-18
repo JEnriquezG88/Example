@@ -2,11 +2,31 @@
     width: 100vw;
     height: 100vh;
     display: grid;
-    grid-template-columns: 1fr 6fr;
+    grid-template-columns: 1fr 10fr;
     grid-template-rows: 1.5fr 8fr 1fr;
 }
 header{
     grid-column: span 2;
+}
+aside{
+    position: relative;
+    min-width: 300px;
+}
+.re-size{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 15px;
+    height: 100%;
+    background-color: transparent;
+    transition: background-color 0.1s;
+    &:hover{
+        background-color: rgba(0, 0, 0, 0.1);
+        cursor: col-resize;
+    }
+    &:active{
+        background-color: rgba(0, 0, 0, 0.2);
+    }
 }
 footer{
     grid-column: span 2;
@@ -29,6 +49,9 @@ main{
     }
     header{
         grid-column: span 1;
+    }
+    .re-size{
+        display: none;
     }
     footer{
         grid-column: span 1;
