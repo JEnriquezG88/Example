@@ -17,6 +17,7 @@ export class AppComponent {
   resizing: boolean = false;
   startX: number = 0;
   startWidth: number = 0;
+  screenWidth: number = 0;
 
   onMouseDown(event: MouseEvent) {
     this.resizing = true;
@@ -28,10 +29,13 @@ export class AppComponent {
   @HostListener('document:mousemove', ['$event'])
   onMouseMove(event: MouseEvent) {
     if (this.resizing) {
+      this.screenWidth = window.innerWidth;
       const newWidth = this.startWidth + (event.clientX - this.startX);
+      console.log(this.screenWidth, newWidth);
       const aside = document.querySelector('aside');
       if (aside) {
-        aside.style.width = `${newWidth}px`;
+        if (newWidth < this.screenWidth - 300)
+          aside.style.width = `${newWidth}px`;
       }
     }
   }
