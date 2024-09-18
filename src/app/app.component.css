@@ -2,7 +2,7 @@
     width: 100vw;
     height: 100vh;
     display: grid;
-    grid-template-columns: 1fr 6fr;
+    grid-template-columns: auto 1fr;
     grid-template-rows: 1.5fr 8fr 1fr;
 }
 header{
@@ -49,9 +49,6 @@ main{
     }
     header{
         grid-column: span 1;
-    }
-    aside{
-        min-width: auto;
     }
     .re-size{
         display: none;
